@@ -1,0 +1,32 @@
+application {
+  config {
+    baseName levelUpTogether,
+    packageName com.chaz,
+    applicationType monolith,
+    prodDatabaseType postgresql,
+  }
+  entities *
+}
+
+entity User {
+  username String required
+  email String required
+}
+
+entity Student {
+  studentId Long required,
+  name String
+}
+
+entity Classroom {
+  classroomId Long required,
+  className String
+}
+
+relationship ManyToOne {
+  Student{user} to User with builtInEntity
+}
+
+relationship ManyToMany {
+  Classroom{students} to Student{classrooms}
+}
