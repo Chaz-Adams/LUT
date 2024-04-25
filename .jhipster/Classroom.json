@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240423192846"
+  },
+  "applications": ["levelUpTogether"],
+  "fields": [
+    {
+      "fieldName": "classroomId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "className",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Classroom",
+  "relationships": [
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "classrooms",
+      "relationshipName": "students",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}
